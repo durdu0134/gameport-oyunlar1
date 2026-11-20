@@ -8,73 +8,48 @@
     :root { --ana-renk: #ff7a00; --neon-isik: rgba(255,122,0,.3); --bg: #070b14; --panel: #0f1624; --line: #1e293b; --text: #f1f5f9; --muted: #94a3b8; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: radial-gradient(circle at top right, #12223d 0%, var(--bg) 45%); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; display: flex; flex-direction: column; }
-    
-    /* Header */
     header { display: flex; justify-content: space-between; align-items: center; padding: 14px 24px; background: rgba(15,22,36,.88); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 50; gap: 12px; flex-wrap: wrap; }
     .marka { display: flex; align-items: center; gap: 12px; }
     .amblem { width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, var(--ana-renk), #ff4500); display: grid; place-items: center; font-size: 24px; box-shadow: 0 0 20px var(--neon-isik); }
-    .logo-ust { font-size: 22px; font-weight: 900; letter-spacing: -.5px; display: flex; align-items: center; gap: 6px; }
+    .logo-ust { font-size: 22px; font-weight: 900; display: flex; align-items: center; gap: 6px; }
     .logo-alt-badge { font-size: 10px; background: var(--ana-renk); color: #fff; padding: 2px 7px; border-radius: 6px; font-weight: 800; }
     .slogan { font-size: 10px; color: var(--muted); letter-spacing: 1px; font-weight: 700; margin-top: 2px; }
     .header-sag { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
     .arama-kutu { background: #090e18; border: 1px solid var(--line); color: #fff; padding: 9px 14px; border-radius: 10px; font-size: 13px; width: 220px; outline: none; }
-    .arama-kutu:focus { border-color: var(--ana-renk); }
-    .btn { background: #162033; color: #fff; border: 1px solid var(--line); padding: 9px 14px; border-radius: 10px; font-size: 12px; font-weight: 700; cursor: pointer; transition: .2s; }
-    .btn:hover { border-color: var(--ana-renk); transform: translateY(-1px); }
+    .btn { background: #162033; color: #fff; border: 1px solid var(--line); padding: 9px 14px; border-radius: 10px; font-size: 12px; font-weight: 700; cursor: pointer; }
     .btn-primary { background: linear-gradient(135deg, var(--ana-renk), #e65c00); border: none; }
-
-    /* Duyuru */
-    .duyuru { margin: 14px 24px 0; padding: 12px 16px; border-radius: 12px; background: rgba(15,22,36,.9); border-left: 4px solid var(--ana-renk); display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 13px; }
-    .duyuru strong { color: var(--ana-renk); display: block; margin-bottom: 2px; }
-
-    /* Ana Alan */
+    .duyuru { margin: 14px 24px 0; padding: 12px 16px; border-radius: 12px; background: rgba(15,22,36,.9); border-left: 4px solid var(--ana-renk); display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
     .ana-konteyner { display: grid; grid-template-columns: 280px 1fr; gap: 20px; padding: 20px 24px; flex: 1; max-width: 1480px; width: 100%; margin: 0 auto; }
-    .sol-panel { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 12px; height: fit-content; }
+    .sol-panel, .sahne-panel { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
     .kategoriler { display: flex; gap: 6px; flex-wrap: wrap; }
     .kat-btn { background: #090e18; border: 1px solid var(--line); color: var(--muted); padding: 5px 10px; border-radius: 8px; font-size: 11px; font-weight: 700; cursor: pointer; }
     .kat-btn.aktif { background: var(--ana-renk); color: #fff; border-color: var(--ana-renk); }
     .oyun-listesi { display: flex; flex-direction: column; gap: 8px; max-height: 540px; overflow-y: auto; }
-    .oyun-kart { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 12px; background: #090e18; border: 1px solid var(--line); border-radius: 11px; cursor: pointer; transition: .2s; }
-    .oyun-kart:hover { border-color: var(--ana-renk); transform: translateX(3px); }
-    .oyun-kart-sol { display: flex; align-items: center; gap: 10px; overflow: hidden; }
-    .oyun-ikon { font-size: 22px; width: 36px; height: 36px; background: #131c2e; border-radius: 9px; display: grid; place-items: center; flex-shrink: 0; }
-    .oyun-ad { font-size: 13px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .oyun-kat-etiket { font-size: 10px; color: var(--muted); }
-
-    /* Oyun Sahnesi */
-    .sahne-panel { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
-    .sahne-ust { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
-    .sahne-baslik { font-size: 16px; font-weight: 800; }
-    .skor-bar { display: flex; gap: 12px; align-items: center; font-size: 12px; font-weight: 800; }
-    .skor-kutu { background: #090e18; padding: 6px 12px; border-radius: 8px; border: 1px solid var(--line); color: var(--ana-renk); }
+    .oyun-kart { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; background: #090e18; border: 1px solid var(--line); border-radius: 11px; cursor: pointer; }
+    .oyun-kart:hover { border-color: var(--ana-renk); }
+    .oyun-kart-sol { display: flex; align-items: center; gap: 10px; }
+    .oyun-ikon { font-size: 22px; width: 36px; height: 36px; background: #131c2e; border-radius: 9px; display: grid; place-items: center; }
+    .sahne-ust { display: flex; justify-content: space-between; align-items: center; }
+    .skor-kutu { background: #090e18; padding: 6px 12px; border-radius: 8px; border: 1px solid var(--line); color: var(--ana-renk); font-size: 12px; font-weight: 800; display: inline-block; }
     .ekran-kapsayici { position: relative; width: 100%; height: 520px; background: #000; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); display: grid; place-items: center; }
-    canvas { max-width: 100%; max-height: 100%; display: block; }
+    canvas { max-width: 100%; max-height: 100%; }
     iframe { width: 100%; height: 100%; border: none; display: none; }
-
-    /* Footer */
-    footer { background: #090e18; border-top: 1px solid var(--line); padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--muted); flex-wrap: wrap; gap: 10px; }
-
-    /* Modal */
-    .modal-bg { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.8); z-index: 100; place-items: center; padding: 16px; }
-    .modal-kutu { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 24px; width: 100%; max-width: 380px; }
-    .modal-kutu h3 { margin-bottom: 14px; font-size: 18px; }
-    .modal-kutu input { width: 100%; padding: 10px 12px; margin-bottom: 10px; background: #090e18; border: 1px solid var(--line); color: #fff; border-radius: 9px; outline: none; }
-
-    @media (max-width: 850px) {
-      .ana-konteyner { grid-template-columns: 1fr; }
-      .ekran-kapsayici { height: 380px; }
-      .arama-kutu { width: 100%; }
-    }
+    footer { background: #090e18; border-top: 1px solid var(--line); padding: 16px 24px; display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); }
+    .modal-bg { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.85); z-index: 100; place-items: center; padding: 16px; overflow-y: auto; }
+    .modal-kutu { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 22px; width: 100%; max-width: 480px; }
+    .modal-kutu input, .modal-kutu select { width: 100%; padding: 10px; margin: 6px 0 10px; background: #090e18; border: 1px solid var(--line); color: #fff; border-radius: 8px; }
+    .oyun-satir { display: flex; justify-content: space-between; align-items: center; padding: 8px; background: #090e18; border-radius: 8px; margin-top: 6px; font-size: 13px; }
+    @media (max-width: 850px) { .ana-konteyner { grid-template-columns: 1fr; } .ekran-kapsayici { height: 380px; } }
   </style>
 </head>
 <body>
 
 <header>
   <div class="marka">
-    <div class="amblem" id="uiAmblem">🎮</div>
+    <div class="amblem">🎮</div>
     <div>
-      <div class="logo-ust"><span id="uiLogo">GamePort</span> <span class="logo-alt-badge" id="uiSubLogo">CLOUD</span></div>
-      <div class="slogan" id="uiSlogan">PLAY • DISCOVER • ENJOY</div>
+      <div class="logo-ust"><span id="uiLogo">GamePort</span> <span class="logo-alt-badge">CLOUD</span></div>
+      <div class="slogan">PLAY • DISCOVER • ENJOY</div>
     </div>
   </div>
   <div class="header-sag">
@@ -85,17 +60,14 @@
 </header>
 
 <div class="duyuru" id="uiDuyuruKutu">
-  <div>
-    <strong id="uiDuyuruBaslik">📢 Hoş Geldiniz!</strong>
-    <span id="uiDuyuruMetin">GamePort bulut senkronizasyonu aktif. Tüm cihazlarda güncel oyunlar!</span>
-  </div>
-  <span style="font-size:11px;color:#00ffcc;font-weight:800;">☁️ CANLI</span>
+  <div><strong id="uiDuyuruBaslik" style="color:var(--ana-renk)">📢 Hoş Geldiniz!</strong> <span id="uiDuyuruMetin">GamePort bulut senkronizasyonu aktif.</span></div>
+  <span id="durumBadge" style="font-size:11px;color:#00ffcc;font-weight:800;">☁️ BAĞLANIYOR...</span>
 </div>
 
 <div class="ana-konteyner">
   <aside class="sol-panel">
     <div style="font-size:13px;font-weight:800;">🕹️ Oyun Kataloğu (<span id="oyunSayac">2</span>)</div>
-    <div class="kategoriler" id="katBar">
+    <div class="kategoriler">
       <button class="kat-btn aktif" onclick="katSec('hepsi', this)">Tümü</button>
       <button class="kat-btn" onclick="katSec('klasik', this)">Klasik</button>
       <button class="kat-btn" onclick="katSec('aksiyon', this)">Aksiyon</button>
@@ -107,11 +79,8 @@
 
   <main class="sahne-panel">
     <div class="sahne-ust">
-      <div class="sahne-baslik" id="sahneBaslik">Oyun Seçin</div>
-      <div class="skor-bar">
-        <div class="skor-kutu">SKOR: <span id="skorEl">0</span></div>
-        <div class="skor-kutu">REKOR: <span id="rekorEl">0</span></div>
-      </div>
+      <div id="sahneBaslik" style="font-weight:800;">Oyun Seçin</div>
+      <div><span class="skor-kutu">SKOR: <span id="skorEl">0</span></span> <span class="skor-kutu">REKOR: <span id="rekorEl">0</span></span></div>
     </div>
     <div class="ekran-kapsayici" id="ekranAlani">
       <canvas id="oyunTuvali" width="720" height="380"></canvas>
@@ -120,79 +89,75 @@
   </main>
 </div>
 
-<footer>
-  <div id="uiSponsor">GamePort • Durdu Şahin</div>
-  <div id="uiIletisim">İletişim: destek@gameport.com</div>
-</footer>
+<footer><div>GamePort • Durdu Şahin</div><div>Bulut Destekli Oyun Portalı</div></footer>
 
 <!-- Giriş Modal -->
 <div class="modal-bg" id="girisModal">
-  <div class="modal-kutu">
-    <h3>🔐 Yönetici Girişi</h3>
+  <div class="modal-kutu" style="max-width:360px">
+    <h3 style="margin-bottom:10px">🔐 Yönetici Girişi</h3>
     <input type="text" id="gUser" placeholder="Kullanıcı adı (admin)" />
     <input type="password" id="gPass" placeholder="Şifre (kanka123)" onkeyup="if(event.key==='Enter')girisYap()" />
-    <div style="display:flex;gap:8px;">
-      <button class="btn btn-primary" style="flex:1;" onclick="girisYap()">GİRİŞ YAP</button>
+    <div style="display:flex;gap:8px">
+      <button class="btn btn-primary" style="flex:1" onclick="girisYap()">GİRİŞ</button>
       <button class="btn" onclick="document.getElementById('girisModal').style.display='none'">İPTAL</button>
     </div>
   </div>
 </div>
 
+<!-- Sayfa İçi Yönetim Paneli -->
+<div class="modal-bg" id="adminModal">
+  <div class="modal-kutu">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+      <h3>🚀 Bulut Yönetim Paneli</h3>
+      <button class="btn" onclick="document.getElementById('adminModal').style.display='none'">✖ Kapat</button>
+    </div>
+    <label style="font-size:12px;color:#94a3b8">Oyun Adı</label>
+    <input id="oAd" placeholder="Örn: Hextris" />
+    <div style="display:grid;grid-template-columns:80px 1fr;gap:8px">
+      <div><label style="font-size:12px;color:#94a3b8">İkon</label><input id="oIkon" value="🎮" /></div>
+      <div><label style="font-size:12px;color:#94a3b8">Kategori</label><select id="oKat"><option value="aksiyon">Aksiyon</option><option value="zeka">Zekâ</option><option value="klasik">Klasik</option><option value="spor">Spor</option></select></div>
+    </div>
+    <label style="font-size:12px;color:#94a3b8">Oyun Linki (HTTPS)</label>
+    <input id="oUrl" placeholder="https://hextris.io/" />
+    <button class="btn btn-primary" style="width:100%" id="kaydetBtn" onclick="oyunKaydet()">➕ OYUNU BULUTA KAYDET</button>
+    <div id="adminOyunListe" style="margin-top:14px;max-height:200px;overflow-y:auto"></div>
+  </div>
+</div>
+
 <script>
 const DB_URL = "https://gameport-dcccf-default-rtdb.europe-west1.firebasedatabase.app/gameport_v2.json";
+let state = { settings: { logo: "GamePort", renk: "#ff7a00", duyuruBaslik: "📢 Hoş Geldiniz!", duyuruMetin: "GamePort bulut senkronizasyonu aktif." }, games: {} };
 
-let state = {
-  settings: {
-    amblem: "🎮", logo: "GamePort", subLogo: "CLOUD", slogan: "PLAY • DISCOVER • ENJOY", renk: "#ff7a00",
-    duyuruDurum: "acik", duyuruBaslik: "📢 Hoş Geldiniz!", duyuruMetin: "GamePort bulut senkronizasyonu aktif. Tüm cihazlarda güncel oyunlar!",
-    sponsor: "GamePort • Durdu Şahin", iletisim: "İletişim: destek@gameport.com"
-  },
-  games: {}
-};
-
-// Buluttan Verileri Çek
 async function buluttanCek() {
   try {
     const res = await fetch(DB_URL + "?t=" + Date.now());
     const data = await res.json();
+    if (data && data.error) {
+      document.getElementById("durumBadge").textContent = "⚠️ FIREBASE İZİN KAPALI";
+      document.getElementById("durumBadge").style.color = "#ff4d4d";
+      return;
+    }
     if (data) {
       if (data.settings) state.settings = { ...state.settings, ...data.settings };
       if (data.games) state.games = data.games;
-      localStorage.setItem("gp_cache", JSON.stringify(state));
     }
+    document.getElementById("durumBadge").textContent = "☁️ CANLI BAĞLI";
   } catch (e) {
-    const cache = localStorage.getItem("gp_cache");
-    if (cache) state = JSON.parse(cache);
+    document.getElementById("durumBadge").textContent = "⚠️ BAĞLANTI HATASI";
   }
-  arayuzuGuncelle();
-}
-
-// Buluta Kaydet
-async function bulutaKaydet() {
-  localStorage.setItem("gp_cache", JSON.stringify(state));
-  await fetch(DB_URL, {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(state)
-  });
-  arayuzuGuncelle();
-}
-
-function arayuzuGuncelle() {
-  const s = state.settings;
-  document.documentElement.style.setProperty("--ana-renk", s.renk || "#ff7a00");
-  document.getElementById("uiAmblem").textContent = s.amblem;
-  document.getElementById("uiLogo").textContent = s.logo;
-  document.getElementById("uiSubLogo").textContent = s.subLogo;
-  document.getElementById("uiSlogan").textContent = s.slogan;
-  document.getElementById("uiSponsor").textContent = s.sponsor;
-  document.getElementById("uiIletisim").textContent = s.iletisim;
-  
-  const dKutu = document.getElementById("uiDuyuruKutu");
-  dKutu.style.display = s.duyuruDurum === "gizle" ? "none" : "flex";
-  document.getElementById("uiDuyuruBaslik").textContent = s.duyuruBaslik;
-  document.getElementById("uiDuyuruMetin").textContent = s.duyuruMetin;
   listeyiCiz();
+}
+
+async function bulutaKaydet() {
+  const res = await fetch(DB_URL, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(state) });
+  const sonuc = await res.json();
+  if (sonuc && sonuc.error) {
+    alert("HATA: Firebase yazma izni kapalı! Firebase -> Realtime Database -> Rules kısmından .read ve .write değerlerini true yap.");
+    return false;
+  }
+  listeyiCiz();
+  adminListeCiz();
+  return true;
 }
 
 let seciliKat = "hepsi";
@@ -207,69 +172,40 @@ function listeyiCiz() {
   const listeEl = document.getElementById("oyunListesi");
   const aranan = document.getElementById("oyunArama").value.toLowerCase();
   listeEl.innerHTML = "";
-
-  const tumOyunlar = [
+  const tum = [
     { id: "snake", name: "Neon Yılan", icon: "🐍", category: "klasik", builtin: true },
     { id: "pong", name: "Masa Tenisi", icon: "🏓", category: "spor", builtin: true },
     ...Object.values(state.games || {})
   ];
-
-  const filtreli = tumOyunlar.filter(g => {
-    const katOk = seciliKat === "hepsi" || g.category === seciliKat;
-    const adOk = g.name.toLowerCase().includes(aranan);
-    return katOk && adOk;
-  });
-
+  const filtreli = tum.filter(g => (seciliKat === "hepsi" || g.category === seciliKat) && g.name.toLowerCase().includes(aranan));
   document.getElementById("oyunSayac").textContent = filtreli.length;
-
   filtreli.forEach(g => {
     const div = document.createElement("div");
     div.className = "oyun-kart";
     div.onclick = () => oyunBaslat(g);
-    div.innerHTML = `
-      <div class="oyun-kart-sol">
-        <div class="oyun-ikon">${g.icon || "🎮"}</div>
-        <div>
-          <div class="oyun-ad">${g.name}</div>
-          <div class="oyun-kat-etiket">${(g.category || "genel").toUpperCase()}</div>
-        </div>
-      </div>
-      <span style="color:var(--ana-renk);font-size:12px;font-weight:900;">▶</span>
-    `;
+    div.innerHTML = `<div class="oyun-kart-sol"><div class="oyun-ikon">${g.icon || "🎮"}</div><div><div style="font-size:13px;font-weight:700">${g.name}</div><div style="font-size:10px;color:#94a3b8">${g.category.toUpperCase()}</div></div></div><span style="color:var(--ana-renk)">▶</span>`;
     listeEl.appendChild(div);
   });
 }
 
-// Oyun Motoru (Dahili + Harici Embed)
-const canvas = document.getElementById("oyunTuvali");
-const ctx = canvas.getContext("2d");
-const iframe = document.getElementById("oyunIframe");
+const canvas = document.getElementById("oyunTuvali"), ctx = canvas.getContext("2d"), iframe = document.getElementById("oyunIframe");
 let oyunTimer = null, skor = 0, rekor = 0;
 
 function karsilamaCiz() {
   ctx.fillStyle = "#050810"; ctx.fillRect(0, 0, 720, 380);
-  ctx.fillStyle = state.settings.renk || "#ff7a00";
-  ctx.font = "900 28px sans-serif"; ctx.textAlign = "center";
+  ctx.fillStyle = "#ff7a00"; ctx.font = "900 26px sans-serif"; ctx.textAlign = "center";
   ctx.fillText("GAMEPORT HAZIR", 360, 175);
   ctx.fillStyle = "#94a3b8"; ctx.font = "14px sans-serif";
-  ctx.fillText("Soldaki listeden bir oyun seçerek hemen oynamaya başla!", 360, 210);
+  ctx.fillText("Soldaki listeden bir oyun seçerek oynamaya başla!", 360, 210);
 }
 
 function oyunBaslat(oyun) {
-  clearInterval(oyunTimer);
-  skor = 0; document.getElementById("skorEl").textContent = "0";
+  clearInterval(oyunTimer); skor = 0; document.getElementById("skorEl").textContent = "0";
   document.getElementById("sahneBaslik").textContent = oyun.name;
-
   if (!oyun.builtin && oyun.url) {
-    canvas.style.display = "none";
-    iframe.style.display = "block";
-    iframe.src = oyun.url;
-    return;
+    canvas.style.display = "none"; iframe.style.display = "block"; iframe.src = oyun.url; return;
   }
-
-  iframe.style.display = "none"; iframe.src = "";
-  canvas.style.display = "block";
-
+  iframe.style.display = "none"; iframe.src = ""; canvas.style.display = "block";
   if (oyun.id === "snake") {
     let yilan = [{x: 10, y: 9}, {x: 9, y: 9}], yon = {x: 1, y: 0}, yem = {x: 18, y: 9};
     window.onkeydown = e => {
@@ -281,137 +217,54 @@ function oyunBaslat(oyun) {
     };
     oyunTimer = setInterval(() => {
       const kafa = {x: yilan[0].x + yon.x, y: yilan[0].y + yon.y};
-      if (kafa.x < 0 || kafa.x >= 36 || kafa.y < 0 || kafa.y >= 19 || yilan.some(s => s.x === kafa.x && s.y === kafa.y)) {
-        clearInterval(oyunTimer); karsilamaCiz(); return;
-      }
+      if (kafa.x < 0 || kafa.x >= 36 || kafa.y < 0 || kafa.y >= 19 || yilan.some(s => s.x === kafa.x && s.y === kafa.y)) { clearInterval(oyunTimer); karsilamaCiz(); return; }
       yilan.unshift(kafa);
-      if (kafa.x === yem.x && kafa.y === yem.y) {
-        skor += 10; document.getElementById("skorEl").textContent = skor;
-        if (skor > rekor) { rekor = skor; document.getElementById("rekorEl").textContent = rekor; }
-        yem = {x: Math.floor(Math.random()*36), y: Math.floor(Math.random()*19)};
-      } else yilan.pop();
-      ctx.fillStyle = "#000"; ctx.fillRect(0,0,720,380);
-      ctx.fillStyle = state.settings.renk; ctx.fillRect(yem.x*20, yem.y*20, 18, 18);
+      if (kafa.x === yem.x && kafa.y === yem.y) { skor += 10; document.getElementById("skorEl").textContent = skor; if (skor > rekor) { rekor = skor; document.getElementById("rekorEl").textContent = rekor; } yem = {x: Math.floor(Math.random()*36), y: Math.floor(Math.random()*19)}; } else yilan.pop();
+      ctx.fillStyle = "#000"; ctx.fillRect(0,0,720,380); ctx.fillStyle = "#ff7a00"; ctx.fillRect(yem.x*20, yem.y*20, 18, 18);
       yilan.forEach((p, i) => { ctx.fillStyle = i===0 ? "#fff" : "#00ffcc"; ctx.fillRect(p.x*20, p.y*20, 18, 18); });
     }, 95);
   } else if (oyun.id === "pong") {
     let bx = 360, by = 190, dx = 4.5, dy = 3, p1 = 150, p2 = 150;
-    window.onkeydown = e => {
-      if (e.key === "ArrowUp") { e.preventDefault(); p1 = Math.max(0, p1 - 25); }
-      if (e.key === "ArrowDown") { e.preventDefault(); p1 = Math.min(300, p1 + 25); }
-    };
+    window.onkeydown = e => { if (e.key === "ArrowUp") { e.preventDefault(); p1 = Math.max(0, p1 - 25); } if (e.key === "ArrowDown") { e.preventDefault(); p1 = Math.min(300, p1 + 25); } };
     oyunTimer = setInterval(() => {
-      bx += dx; by += dy;
-      if (by < 8 || by > 372) dy = -dy;
-      p2 += (by > p2 + 40 ? 3.5 : -3.5);
+      bx += dx; by += dy; if (by < 8 || by > 372) dy = -dy; p2 += (by > p2 + 40 ? 3.5 : -3.5);
       if (bx < 25 && by > p1 && by < p1 + 80) { dx = -dx; skor += 5; document.getElementById("skorEl").textContent = skor; }
       if (bx > 695 && by > p2 && by < p2 + 80) dx = -dx;
       if (bx < 0 || bx > 720) { clearInterval(oyunTimer); karsilamaCiz(); return; }
-      ctx.fillStyle = "#000"; ctx.fillRect(0,0,720,380);
-      ctx.fillStyle = "#fff"; ctx.fillRect(15, p1, 10, 80); ctx.fillRect(695, p2, 10, 80);
-      ctx.fillStyle = state.settings.renk; ctx.beginPath(); ctx.arc(bx, by, 8, 0, Math.PI*2); ctx.fill();
+      ctx.fillStyle = "#000"; ctx.fillRect(0,0,720,380); ctx.fillStyle = "#fff"; ctx.fillRect(15, p1, 10, 80); ctx.fillRect(695, p2, 10, 80);
+      ctx.fillStyle = "#ff7a00"; ctx.beginPath(); ctx.arc(bx, by, 8, 0, Math.PI*2); ctx.fill();
     }, 1000/60);
   }
 }
 
-function tamEkran() {
-  const el = document.getElementById("ekranAlani");
-  if (el.requestFullscreen) el.requestFullscreen();
-}
-
-// Yönetim Paneli
+function tamEkran() { const el = document.getElementById("ekranAlani"); if (el.requestFullscreen) el.requestFullscreen(); }
 function girisAc() { document.getElementById("girisModal").style.display = "grid"; document.getElementById("gUser").focus(); }
 function girisYap() {
-  const u = document.getElementById("gUser").value.trim();
-  const p = document.getElementById("gPass").value.trim();
-  if (u === "admin" && p === "kanka123") {
+  if (document.getElementById("gUser").value.trim() === "admin" && document.getElementById("gPass").value.trim() === "kanka123") {
     document.getElementById("girisModal").style.display = "none";
-    panelAc();
-  } else alert("Hatalı kullanıcı adı veya şifre!");
+    document.getElementById("adminModal").style.display = "grid";
+    adminListeCiz();
+  } else alert("Hatalı giriş!");
 }
-
-function panelAc() {
-  const w = window.open("", "GamePortAdmin", "width=820,height=720");
-  w.document.write(`<!DOCTYPE html><html lang="tr"><head><meta charset="UTF-8"><title>GamePort Bulut Yönetim</title>
-  <style>
-    body{background:#090d16;color:#f1f5f9;font-family:sans-serif;padding:20px;margin:0}
-    h2{border-bottom:1px solid #1e293b;padding-bottom:12px;display:flex;justify-content:space-between;align-items:center}
-    .box{background:#111827;border:1px solid #1e293b;border-radius:12px;padding:16px;margin-bottom:16px}
-    label{display:block;font-size:11px;color:#94a3b8;margin:8px 0 4px;font-weight:bold}
-    input,select{width:100%;padding:9px;background:#090d16;border:1px solid #334155;color:#fff;border-radius:8px;box-sizing:border-box}
-    button{background:#ff7a00;color:#fff;border:none;padding:10px 16px;border-radius:8px;font-weight:bold;cursor:pointer;margin-top:12px}
-    .oyun-satir{display:flex;justify-content:space-between;align-items:center;padding:8px;background:#090d16;border-radius:8px;margin-top:6px;border:1px solid #1e293b}
-  </style></head><body>
-  <h2><span>🚀 GamePort Bulut Studio</span> <span style="font-size:12px;color:#00ffcc">☁️ Firebase Bağlı</span></h2>
-  
-  <div class="box">
-    <h3>➕ Yeni Oyun Ekle (Tüm Cihazlara Anında Gider)</h3>
-    <label>Oyun Adı</label><input id="oAd" placeholder="Örn: 2048 Klasik" />
-    <label>İkon (Emoji)</label><input id="oIkon" value="🕹️" />
-    <label>Kategori</label>
-    <select id="oKat"><option value="aksiyon">Aksiyon</option><option value="zeka">Zekâ</option><option value="klasik">Klasik</option><option value="spor">Spor</option></select>
-    <label>Embed / Vercel Oyun Linki (HTTPS)</label><input id="oUrl" placeholder="https://gameport-oyunlar.vercel.app/..." />
-    <button onclick="oyunKaydet()">OYUNU BULUTA EKLE</button>
-    <div id="listeAlani" style="margin-top:14px"></div>
-  </div>
-
-  <div class="box">
-    <h3>🎨 Site & Duyuru Ayarları</h3>
-    <label>Site Başlığı</label><input id="sLogo" />
-    <label>Tema Rengi</label><input type="color" id="sRenk" style="height:40px" />
-    <label>Duyuru Durumu</label><select id="sDurum"><option value="acik">Göster</option><option value="gizle">Gizle</option></select>
-    <label>Duyuru Başlığı</label><input id="sDBaslik" />
-    <label>Duyuru Metni</label><input id="sDMetin" />
-    <button style="background:#0284c7" onclick="ayarKaydet()">AYARLARI BULUTA KAYDET</button>
-  </div>
-
-  <script>
-    const st = window.opener.state;
-    document.getElementById("sLogo").value = st.settings.logo;
-    document.getElementById("sRenk").value = st.settings.renk;
-    document.getElementById("sDurum").value = st.settings.duyuruDurum;
-    document.getElementById("sDBaslik").value = st.settings.duyuruBaslik;
-    document.getElementById("sDMetin").value = st.settings.duyuruMetin;
-
-    function ciz() {
-      const el = document.getElementById("listeAlani"); el.innerHTML = "";
-      Object.values(st.games || {}).forEach(g => {
-        el.innerHTML += '<div class="oyun-satir"><span>'+g.icon+' <b>'+g.name+'</b> ('+g.category+')</span><button style="background:#e11d48;margin:0;padding:5px 10px" onclick="sil(\\''+g.id+'\\')">Sil</button></div>';
-      });
-    }
-    async function oyunKaydet() {
-      const name = document.getElementById("oAd").value.trim();
-      const url = document.getElementById("oUrl").value.trim();
-      if(!name || !url) return alert("Oyun adı ve linki zorunlu!");
-      const id = "g_" + Date.now();
-      st.games[id] = { id, name, icon: document.getElementById("oIkon").value || "🎮", category: document.getElementById("oKat").value, url };
-      await window.opener.bulutaKaydet();
-      document.getElementById("oAd").value = ""; document.getElementById("oUrl").value = "";
-      ciz(); alert("Oyun buluta eklendi! Telefondan sayfayı yenileyince göreceksin.");
-    }
-    async function sil(id) {
-      delete st.games[id];
-      await window.opener.bulutaKaydet();
-      ciz();
-    }
-    async function ayarKaydet() {
-      st.settings.logo = document.getElementById("sLogo").value;
-      st.settings.renk = document.getElementById("sRenk").value;
-      st.settings.duyuruDurum = document.getElementById("sDurum").value;
-      st.settings.duyuruBaslik = document.getElementById("sDBaslik").value;
-      st.settings.duyuruMetin = document.getElementById("sDMetin").value;
-      await window.opener.bulutaKaydet();
-      alert("Ayarlar buluta kaydedildi!");
-    }
-    ciz();
-  <\/script></body></html>`);
-  w.document.close();
+function adminListeCiz() {
+  const el = document.getElementById("adminOyunListe"); el.innerHTML = "";
+  Object.values(state.games || {}).forEach(g => {
+    el.innerHTML += `<div class="oyun-satir"><span>${g.icon} <b>${g.name}</b></span><button class="btn" style="background:#e11d48;padding:4px 8px" onclick="oyunSil('${g.id}')">Sil</button></div>`;
+  });
 }
+async function oyunKaydet() {
+  const name = document.getElementById("oAd").value.trim(), url = document.getElementById("oUrl").value.trim();
+  if (!name || !url) return alert("Oyun adı ve linkini yaz!");
+  const btn = document.getElementById("kaydetBtn"); btn.textContent = "KAYDEDİLİYOR...";
+  const id = "g_" + Date.now();
+  state.games[id] = { id, name, icon: document.getElementById("oIkon").value || "🎮", category: document.getElementById("oKat").value, url };
+  const ok = await bulutaKaydet();
+  btn.textContent = "➕ OYUNU BULUTA KAYDET";
+  if (ok) { document.getElementById("oAd").value = ""; document.getElementById("oUrl").value = ""; alert("✅ Oyun buluta kaydedildi! Telefondan da hemen görebilirsin."); }
+}
+async function oyunSil(id) { delete state.games[id]; await bulutaKaydet(); }
 
-window.onload = () => {
-  karsilamaCiz();
-  buluttanCek();
-};
+window.onload = () => { karsilamaCiz(); buluttanCek(); };
 </script>
 </body>
 </html>
